@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+
+    <link href="/static/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+<div class='signup-container'>
+    <div class='left-container'>
+        <h1>
+            <i class='fas fa-paw'></i>
+            PUPASSURE
+        </h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/companies">Company</a></li>
+                <li><a href="/courses">Course</a></li>
+                <li><a href="/teachers">Teacher</a></li>
+                <li><a href="/students">Student</a></li>
+                <li><a href="/groups">Group</a></li>
+            </ul>
+
+    </div>
+    <div class='right-container'>
+        <header>
+            <h1>Yay, puppies! Ensure your pup gets the best care!</h1>
+            <table >
+                <tbody>
+                <tr>
+                    <th>#</th>
+                    <th>student name</th>
+                    <th>studentSurName</th>
+                    <th>studentAge</th>
+                    <th>Update</th>
+                    <th>Deleted</th>
+                </tr>
+                <tr th:each="student:${students}">
+                    <td th:text="${student.id}"></td>
+                    <td><a th:text="${student.studentName}" th:href="@{/students/studentPage}">
+
+                    </a></td>
+                    <td th:text="${student.studentSurName}"></td>
+                    <td th:text="${student.studentAge}"></td>
+                    <td><a class="bi bi-pen-fill" th:href="@{/students/update/{id}(id=${student.id})}">
+
+                    </a>
+                    </td>
+                    <td>
+                        <form  th:method="Delete"
+                               th:action="@{/students/delete(id=${student.id})}">
+
+                            <button type="submit" class="bi bi-trash-fill" style="border: none; :vizited" ></button>
+
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </header>
+        <footer>
+            <div class='set'>
+                <button id=''>Back</button>
+                <a href="students/addStudent">
+                    <button class="bi bi-plus-circle" id='next'>Add</button>
+                </a>
+            </div>
+
+        </footer>
+    </div>
+</div>
+</body>
+</html>

@@ -14,6 +14,11 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
+    @Override
+    public User getUserByUserName(String userName){
+        User user = entityManager.createQuery("select u from User u where "u.userName =: userName);
+    }
+
 
 
     @Override

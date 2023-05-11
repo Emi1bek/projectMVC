@@ -10,7 +10,7 @@ import peaksoft.service.UserService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/users")
 public class UserController {
     private final UserService userService;
     @Autowired

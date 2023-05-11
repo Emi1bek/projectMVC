@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Company</title>
+    <link href="/static/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class='signup-container'>
+    <div class='left-container'>
+        <h1>
+            <i class='fas fa-paw'></i>
+            PUPASSURE
+        </h1>
+        <div class='puppy'>
+
+        </div>
+        <div class="widget">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/companies">Company</a></li>
+                <li><a href="/courses">Course</a></li>
+                <li><a href="/teachers">Teacher</a></li>
+                <li><a href="/students">Student</a></li>
+                <li><a href="/groups">Group</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class='right-container'>
+        <header>
+            <h1>Yay, puppies! Ensure your pup gets the best care!</h1>
+            <div class='set'>
+                <!--   <div class='pets-breed'
+                      th:action="@{saveCompany}"
+                      th:method="post"
+                      th:object="${company}">
+                     <label for='pets-breed'>Company Name</label>
+                     <input id='pets-breed' th:field="*{companyName}" placeholder="Company's Name" type='text'>
+                 </div>
+                 <div class='pets-birthday'
+                      th:action="@{saveCompany}"
+                      th:method="post"
+                      th:object="${company}">
+                     <label for='pets-birthday'>Company located Country</label>
+                     <input id='pets-birthday' th:field="*{locatedCountry}" placeholder='Company located Country'
+                            type='text'>
+                 </div>-->
+
+                <form th:action="@{saveCompany}"
+                      th:method="post"
+                      th:object="${company}">
+                    <div class='pets-breed'>
+                        <label for='pets-breed'>Company </label>
+                        <input id='pets-breed' th:field="*{companyName}" placeholder="name" type='text'>
+                    </div>
+                        <div class='pets-birthday'>
+                            <label for='pets-birthday'>Located </label>
+                            <input id='pets-birthday' th:field="*{locatedCountry}" placeholder='country' type='text'>
+                        </div>
+                        <input id='next' type="submit" value="add company">
+
+                </form>
+
+
+            </div>
+        </header>
+        <footer>
+            <div class='set'>
+
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

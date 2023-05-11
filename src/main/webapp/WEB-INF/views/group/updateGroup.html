@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Company</title>
+
+  <link href="/static/style.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class='signup-container'>
+  <div class='left-container'>
+    <h1>
+      <i class='fas fa-paw'></i>
+      PUPASSURE
+    </h1>
+    <div class='puppy'>
+
+    </div>
+    <div class="widget">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/companies">Company</a></li>
+        <li><a href="/courses">Course</a></li>
+        <li><a href="/teachers">Teacher</a></li>
+        <li><a href="/students">Student</a></li>
+        <li><a href="/groups">Group</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class='right-container'>
+    <header>
+      <h1>Yay, puppies! Ensure your pup gets the best care!</h1>
+      <div class='set'>
+        <form th:action="@{/groups/{id}(id=${updateGroup.id})}"
+              th:method="patch"
+              th:object="${updateGroup}">
+          <div class='pets-breed'>
+            <label for='pets-breed'>Group</label>
+            <input id='pets-breed' th:field="*{groupName}" placeholder="name" type='text'>
+          </div>
+          <br>
+          <div class='pets-birthday'>
+            <label for='pets-birthday'>dataOfStart</label>
+            <input id='pets-birthday' th:field="*{dataOfStart}" placeholder='start' type='text'>
+          </div>
+          <div class='pets-name'>
+            <label for='pets-name'>dataOfFinished</label>
+            <input id='pets-name' th:field="*{dataOfFinished}" placeholder="finished" type='text'>
+          </div>
+          <input id='next' type="submit" value="update">
+        </form>
+
+      </div>
+    </header>
+    <footer>
+      <div class='set'>
+
+      </div>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
